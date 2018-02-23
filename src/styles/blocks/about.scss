@@ -1,0 +1,53 @@
+.about {
+  position: relative;
+  display: flex;
+}
+
+.about__triangle {
+  position: absolute;
+  bottom: 100%;
+  width: 50%;
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}
+
+.about__user {
+  padding-bottom: 40px;
+}
+
+.about__user, .about__skills {
+  width: 50%;
+}
+
+.about__title {
+  text-align: center;
+  margin-top: -40px;
+}
+
+.about__user {
+  background: $white;
+}
+
+.about__content {
+  padding: 0 75px;
+}
+
+.about__skills {
+  background: $beige;
+  padding: 0 40px;
+}
+
+.about__skills-title {
+  text-align: center;
+  margin-bottom: 17px;
+}
+
+.about__skills-text {
+  margin-bottom: 45px;
+}

@@ -1,0 +1,28 @@
+.section-subtitle {
+  display: inline-block;
+  @include bernier();
+  font-size: 35px;
+  position: relative;
+  padding: 0 40px;
+  margin: 0 22px;
+  max-width: 310px;
+  text-align: center;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 22px;
+    height: 5px;
+    width: 22px;
+    background: rgba($text-color, .2);
+  }
+
+  &:before {
+    left: -4px;
+  }
+
+  &:after {
+    right: -4px;
+  }
+}

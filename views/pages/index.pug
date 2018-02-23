@@ -1,0 +1,118 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Добро пожаловать'
+
+block content
+  section.hero
+    +image('bg/hero.jpg', '', 'hero__bg')
+    .hero__socials
+      - var socials = ['vk', 'github', 'in']
+      ul.socials
+        each social in socials
+          li.socials__item
+            a(href="").socials__link
+              +icon(`${social}`, 'socials__icon')
+    a(href="").hero__menu.hamburger-menu
+      +icon('hamburger', 'hamburger-menu__icon')
+
+    .hero__content
+      +icon('portfolio_header', 'hero__title')
+      .hero__user.user
+        .user__pic
+          +image('content/user.jpg', 'user pic', 'user__avatar')
+        .user__desc
+          .user__name Владимир Астахов
+          .user__desc-data Личный сайт веб-разработчика
+
+    a(href="").hero__arrow.arrow-down-btn
+      +icon('arrow_down', 'arrow-down-btn__icon')
+
+  section.about
+    .about__user
+      .about__triangle.about__triangle--left
+        svg(viewBox="0 0 1000 150" preserveAspectRatio="none").triangle.triangle--white
+          polygon(points="0,0 0,150 1000,150")
+
+      .about__title
+        +section-title('Обо мне', 'about_header')
+      .about__content
+        .user-desc
+          .user-desc__pic
+            +image('content/user-full.jpg', 'user full picture', 'user-desc__avatar')
+          .user-desc__title
+            .section-subtitle Кто я
+          .user-desc__text.text
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod atque iste omnis architecto reiciendis quibusdam quis ex, quia rem, at libero tempora accusantium, modi temporibus adipisci iure id a ipsam?
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod atque iste omnis architecto reiciendis quibusdam quis ex, quia rem, at libero tempora accusantium, modi temporibus adipisci iure id a ipsam?
+    .about__skills
+      .about__triangle.about__triangle--right
+        svg(viewBox="0 0 1000 150" preserveAspectRatio="none").triangle.triangle--beige
+          polygon(points="1000,0 0,150 1000,150")
+      .about__skills-title
+        .section-subtitle Чем я могу быть вам полезен
+      .about__skills-text
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quia doloremque, maiores at culpa explicabo tempore voluptates dicta ad eveniet! Eaque est commodi blanditiis earum sapiente eius deserunt distinctio necessitatibus?
+      - 
+        var skills = {
+          Frontend: ['html', 'CSS3', 'JavaScript & jQuery'],
+          Backend: ['PHP', 'mySQL', 'Node.js & Npm', 'Mongo.db'],
+          WorkFlow: ['Git', 'Gulp', 'Webpack']
+        } 
+      #skills
+      ul.skills-list
+        each skillsArray, skillsName in skills
+          li.skills-list__item.skills-row
+            .skills-row__title #{skillsName}
+            ul.skills-row__list
+              each skill in skillsArray
+                li.skills-row__item
+                  .skill
+                    svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__circle.skill__circle--under
+                      circle(cx="50" cy="50" r="40")
+                    svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__circle.skill__circle--above
+                      circle(cx="50" cy="50" r="40")
+                    .skill__title #{skill}
+  section.map
+    .google-map
+    .contacts.map__contacts
+      .contacts__section-title
+        .section-subtitle Контакты
+      ul.contacts__list
+        - 
+          var contacts = [
+            ['skype', 'skype_kdn'],
+            ['envelope', 'astahov@gmail.com'],
+            ['phone', '+7 931 200 93 24'],
+            ['map_marker', 'г. Новосибирск, ул Инская д.5']
+          ]  
+        each item in contacts
+          li.contacts__item
+            +icon(`${item[0]}`, 'contacts__icon')
+            .contacts__title #{item[1]}
+
+  footer.footer
+    .footer__wrapper
+      .footer__row
+        .footer__container
+          .footer__col.footer__col--left
+            - var menuItems = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+            ul.menu
+              each item in menuItems
+                li.menu__item
+                  a(href="").menu__link #{item}
+
+          .footer__col.footer__col--right
+            ul.socials.socials--rounded
+              each social in socials
+                li.socials__item
+                  a(href="").socials__link
+                    +icon(`${social}`, 'socials__icon')
+      .footer__row
+        .footer__container
+          .footer__col.footer__col--left
+            .footer__text 
+              | Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+          .footer__col.footer__col--right
+            .footer__text 
+              | © Владимир Астахов | создано с любовью в LoftSchool | 2018

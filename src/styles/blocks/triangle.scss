@@ -1,0 +1,12 @@
+.triangle {
+  width: 100%;
+  height: 150px;
+  display: block;
+  
+  &--white {
+    fill: $white;
+  }
+  &--beige {
+    fill: $beige;
+  }
+}
