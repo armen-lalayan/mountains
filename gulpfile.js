@@ -149,6 +149,7 @@ gulp.task("watch", () => {
   gulp.watch(`${SRC_DIR}/images/**/*.*`, gulp.series("images"));
   gulp.watch(`${SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${SRC_DIR}/fonts/*`, gulp.series("fonts"));
+  gulp.watch(`views/pages/*`).on('change', reload);
 });
 
 // GULP:RUN

@@ -34,14 +34,18 @@
     "gulp-svgmin": "^1.2.4",
     "gulp-webpack": "^1.5.0",
     "sass-module-importer": "^1.4.0",
+    "tiny-lr": "^1.1.1",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
-    "webpack": "^3.10.0"
+    "webpack": "^4.0.1",
+    "webpack-hot-middleware": "^2.21.2"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "jquery": "^3.2.1",
     "normalize.css": "^7.0.0",
-    "vue": "^2.5.13"
+    "pug": "^2.0.0-rc.4",
+    "vue": "^2.5.13",
+    "webpack-dev-middleware": "^3.0.0"
   }
 }
